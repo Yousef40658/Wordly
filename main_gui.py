@@ -62,31 +62,6 @@ def setings_button () :
     
     tk.Button(settings_window, text="Save" , command= save_word_length).pack(pady=10) 
     
-    #Style
-    tk.Label(
-    settings_window,
-    text="Select word length",
-    font=("Arial", 14, "bold"),
-    fg="white",
-    bg="#121213"
-    ).pack(pady=10)
-    floating_slider_value = tk.Label(
-    slider_frame,
-    text=str(word_length.get()),
-    font=("Arial", 12, "bold"),
-    fg="white",
-    bg="#121213"
-    )
-    tk.Button(
-    settings_window,
-    text="Save",
-    font=("Arial", 12, "bold"),
-    bg="#538d4e",
-    fg="white",
-    relief="flat",
-    command=save_word_length
-    ).pack(pady=10)
-
 
 
 
