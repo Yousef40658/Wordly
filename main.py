@@ -3,6 +3,7 @@ import requests
 import os
 from enum import Enum
 import helpers
+from main_gui import *
 
 #enum for more readability , returns colour to automate it a bit in Gui
 class flow(Enum):
@@ -11,18 +12,17 @@ class flow(Enum):
     wrong_letter ="#787c7e"
 
 
-class Worlde :
+class Wordle :
     def __init__(self, word_length = 5 , max_attempts = 6):
         self.word_length = word_length 
         self.max_attempts = max_attempts
         self.selected_word = self.select_word(word_length)
+        print("Selected word:", self.selected_word)
         
         #Flow
         self.Won = False
         self.game_over = False
         self.attempts_left = max_attempts
-    
-
 
     def select_word(self,word_length) :                               #passed as a parameter to reduce dependency 
         file_name = f'{word_length}-letter-words.txt'                 #3-letter-words.txt , 4-letter-words.txt
@@ -88,7 +88,5 @@ class Worlde :
         
         return letter_eval 
 
-    
-
-wordle = Worlde()
-print(wordle.selected_word)
+if __name__ != "main" :
+    wordle_gui.mainloop()
