@@ -3,7 +3,6 @@ import requests
 import os
 from enum import Enum
 import helpers
-from main_gui import *
 
 #enum for more readability , returns colour to automate it a bit in Gui
 class flow(Enum):
@@ -87,6 +86,3 @@ class Wordle :
             self.game_over = True
         
         return letter_eval 
-
-if __name__ != "main" :
-    wordle_gui.mainloop()
